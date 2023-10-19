@@ -1,6 +1,5 @@
 
 # Dependencies Project
-----
 
 ## Installing clang-format 
 
@@ -23,7 +22,6 @@ sudo apt-get install clang-format
 clang-format --version
 ```
 
----
 ## Installing cmake
 
 - Open the terminal.  
@@ -45,7 +43,7 @@ sudo apt install cmake
 clang-format --version
 ```
 
----
+
 # Debug  and  build project
 
 - Open the terminal inside this project
@@ -79,7 +77,6 @@ make
 ./main
 ```
 
----
 # visual studio code  configurations
 
 
@@ -98,4 +95,3 @@ make
 
 ```
 
----
