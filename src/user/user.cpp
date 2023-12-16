@@ -1,9 +1,10 @@
 #include "../../include/user/user.hpp"
+namespace user {
+void user::set_name(const std::string &name) { this->userName = name; }
+void user::set_type(const std::string &type) { this->userType = type; }
+void user::set_state(const bool &state) { this->userState = state; }
 
-void user::userClass::setName(const std::string &name) { userName = name; }
-void user::userClass::setType(const std::string &type) { userType = type; }
-void user::userClass::setState(const bool &state) { userState = state; }
-
-std::string user::userClass::getName() { return userName; }
-std::string user::userClass::getType() { return userType; }
-bool user::userClass::getState() { return userState; }
+auto user::get_name() const -> std::string { return this->userName; }
+auto user::get_type() const -> std::string { return this->userType; }
+auto user::get_state() const -> bool { return this->userState; }
+}  // namespace user
