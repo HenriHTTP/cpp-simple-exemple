@@ -1,3 +1,4 @@
 cmake-debug/
 /.vscode
 /.obsidian
+/build
