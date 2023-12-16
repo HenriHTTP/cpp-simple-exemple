@@ -5,24 +5,25 @@
 
 namespace player {
 
-class playerInterfaces {
-  virtual void moveLeft(const int &position) = 0;
-  virtual void moveRight(const int &position) = 0;
-  virtual int getPositionPlayer() = 0;
-};
-
-class playerClass : public playerInterfaces {
+class player {
  public:
-  playerClass(int startX = 0) : x(startX){};
+  player() = default;
+  player(unsigned int x, unsigned int y, float speed)
+      : x(x), y(y), speed(speed){};
 
-  void moveLeft(const int &position) override;
-  void moveRight(const int &position) override;
+  void move_left(const int &position);
+  void move_right(const int &position);
+  void move_jump(const int &jump_height);
+  void set_speed(const float &speed);
 
-  int getPositionPlayer() override;
+  auto get_position_x() -> const int;
+  auto get_positon_y() -> const int;
+  auto get_speed() -> const float;
 
  private:
-  int x{};
-  int y{};
+  unsigned int x{};
+  unsigned int y{};
+  float speed{};
 };
 }  // namespace player
 #endif  // _PLAYER_H

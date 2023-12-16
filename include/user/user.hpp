@@ -6,30 +6,19 @@
 #include <string>
 
 namespace user {
-
-class userInterfaces {
+class user {
  public:
-  virtual void setName(const std::string &name) = 0;
-  virtual void setType(const std::string &type) = 0;
-  virtual void setState(const bool &state) = 0;
+  user() = default;
+  user(std::string userName, std::string userType, bool userState)
+      : userName(userName), userType(userType), userState(userState){};
 
-  virtual std::string getName() = 0;
-  virtual std::string getType() = 0;
-  virtual bool getState() = 0;
-};
+  void set_name(const std::string &name);
+  void set_type(const std::string &type);
+  void set_state(const bool &tyoe);
 
-class userClass : public userInterfaces {
- public:
-  userClass(){};
-  userClass(std::string name) : userName(name){};
-
-  void setName(const std::string &name) override;
-  void setType(const std::string &type) override;
-  void setState(const bool &tyoe) override;
-
-  std::string getName() override;
-  std::string getType() override;
-  bool getState() override;
+  auto get_name() const -> std::string;
+  auto get_type() const -> std::string;
+  auto get_state() const -> bool;
 
  private:
   std::string userName{};
