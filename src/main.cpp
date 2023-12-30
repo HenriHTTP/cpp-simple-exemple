@@ -3,29 +3,23 @@
 #include "../include/hello/hello.hpp"
 #include "../include/player/player.hpp"
 #include "../include/user/user.hpp"
+#include <memory>
 
-int main() {
-  // std::cout << hello::hello_world() << std::endl;
-  // std::cout << "my rina not like me too , i wanna cry" << std::endl;
+int main()
+{
 
-  // user::userClass user{};
-  // user.setName("rina_wilk");
+    auto player = std::make_shared<player::player>();
 
-  // std::cout << user.getName() << std::endl;
+    std::cout << "position:" << player->get_position_x() << std::endl;
 
-  player::player *player = new player::player;
+    player->move_left(20);
+    std::cout << "position:" << player->get_position_x() << std::endl;
 
-  std::cout << "position:" << player->get_position_x() << std::endl;
+    player->move_right(20);
+    std::cout << "position:" << player->get_position_x() << std::endl;
 
-  player->move_left(20);
-  std::cout << "position:" << player->get_position_x() << std::endl;
-
-  player->move_right(20);
-  std::cout << "position:" << player->get_position_x() << std::endl;
-
-  player->set_speed(3.16f);
-  std::cout << "speed:" << player->get_speed() << std::endl;
-
-  delete player;
-  return 0;
+    player->set_speed(3.16f);
+    std::cout << "speed:" << player->get_speed() << std::endl;
+    
+    return 0;
 }

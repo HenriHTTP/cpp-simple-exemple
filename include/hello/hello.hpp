@@ -7,7 +7,8 @@
 #include <string>
 
 // method
-namespace hello {
+namespace hello
+{
 std::string hello_world();
 };
 

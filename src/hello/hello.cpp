@@ -1,9 +1,10 @@
 #include "../../include/hello/hello.hpp"
 
-namespace hello {
+namespace hello
+{
 
-std::string hello_world() {
-  std::string grettings = "hello world";
-  return grettings;
+std::string hello_world()
+{
+    return "hello world";
 }
-}  // namespace hello
+} // namespace hello
